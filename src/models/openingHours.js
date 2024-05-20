@@ -13,6 +13,7 @@ function isOpenOn(date) {
   
     for (const entry of openingHours) {
       if (entry.days.includes(day)) {
+        // Check if the provided time falls within the opening hours
         const [startTime, endTime] = entry.hours;
         if (time >= startTime && time <= endTime) {
           return true;
@@ -39,11 +40,13 @@ function nextOpeningDate(date) {
 
     for (const entry of openingHours) {
         if (entry.days.includes(day)) {
-          const [startTime, endTime] = entry.hours;
-          if (time >= startTime && time <= endTime) {
-            nextDate.setHours(parseInt(endTime.split(':')[0]));
-            nextDate.setMinutes(parseInt(endTime.split(':')[1]) + 1);
-          }
+            // Check if the provided time falls within the opening hours
+            const [startTime, endTime] = entry.hours;
+            if (time >= startTime && time <= endTime) {
+                // Set the next date to check's time to the end time of the current entry
+                nextDate.setHours(parseInt(endTime.split(':')[0]));
+                nextDate.setMinutes(parseInt(endTime.split(':')[1]) + 1);
+            }
         }
     }
 
