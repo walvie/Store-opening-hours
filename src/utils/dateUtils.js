@@ -4,7 +4,7 @@
  * @returns {string} The abbreviated name of the day of the week (e.g., "Mon").
  */
 function getDay(date) {
-    return date.toLocaleString('en', { weekday: 'short' });
+    return date.toLocaleString('en', { weekday: 'short', timeZone: 'UTC' });
 }
 
 /**
@@ -13,7 +13,7 @@ function getDay(date) {
  * @returns {string} The time portion of the date in "hh:mm" format (24-hour format).
  */
 function getTime(date) {
-    return date.toLocaleString('en', { hour: '2-digit', minute: '2-digit', hour12: false });
+    return date.toLocaleString('en', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'UTC'  });
 }
 
 module.exports = { getDay, getTime };
