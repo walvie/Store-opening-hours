@@ -22,4 +22,11 @@ function isOpenOn(date) {
     return false;
 }
 
-module.exports = { isOpenOn };
+/**
+ * @param {Date} date The date from which to check the next open date.
+ */
+function nextOpeningDate(date) {
+    return true
+}
+
+module.exports = { isOpenOn, nextOpeningDate };
