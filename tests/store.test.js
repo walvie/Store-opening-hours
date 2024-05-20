@@ -11,7 +11,7 @@ thursday_afternoon = '2024-02-22T14:00:00.000'
 test('isOpenOn should return correct values', () => {
     expect(isOpenOn(wednesday)).toBe(false);
     expect(isOpenOn(thursday)).toBe(false);
-    expect(isOpenOn(saturday)).toBe(false);
+    expect(isOpenOn(sunday)).toBe(false);
 });
 
 test('nextOpeningDate should return correct values', () => {
